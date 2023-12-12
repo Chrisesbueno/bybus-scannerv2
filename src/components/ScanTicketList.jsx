@@ -44,7 +44,7 @@ const ScanTicketList = ({ status = false, cancel = false, ticket }) => {
         }}
       >
         {/* {cancel ? "CANCELADO" : status ? "ABORDO" : "SIN ABORDAR"} */}
-        {ticket?.status?.toUpperCase()}
+        {ticket?.status?.toUpperCase() === 'PAID' ? 'COMPRADO' : ticket?.status?.toUpperCase() === 'BOARDED' ? 'ABORDO' : ticket?.status?.toUpperCase() === 'RETURNED' ? 'DEVUELTO' : 'CANCELADO'}
       </Text>
     </View>
   );
